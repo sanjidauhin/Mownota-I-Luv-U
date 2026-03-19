@@ -1,0 +1,540 @@
+// ===== Configuration =====
+const pleasingMessages = [
+    "Please? 🥺",
+    "Don't say no!!!!",
+    "Pleaseeeeeeeeeeeee 💕",
+    "মৌনতা, আমি তো শুধু তোমারই! 🍝",
+    "Pretty please? 🎀",
+    "ঢাকার রাস্তায় হাটু গেড়ে প্রোপোজ আর কে করবে তোমাকে? 😊",
+    "Just say yes! ❤️",
+    "তোমাকে রান্না করে খাওয়াবো!! 🌟",
+    "তোমাকে ছাড়া কিভাবে বাঁচব আমি! 🙏",
+    "You're making me sad... 😢",
+    "One more chance? 🌹",
+    "তোমার ঐ মিষ্টি হাসি আমি বড্ড ভালোবাসি! 😄",
+    "তোমার জন্য কুমিল্লা কে আসবে! 💑",
+    "তোমার মাথা টিপে দিব!! 💔",
+    "Say yes, say yes, say yes! 🎉"
+    "তোমার আইটেমের আগে কল দিয়ে জ্বালাবো না! 🌟",
+    "তুমি যা বলবে তাই করবো! 🙏",
+    "তোমার জন্য কবিতা লিখবো... 😢",
+    "শেষবারের মত মাফ করে দেও? 🌹",
+    "তোমাকে বিয়ে করে সম্রাজ্ঞীর মত রাখবো! 😄",
+    "তোমার জন্য রান্না করবো! 💑",
+    "আমার মত আর ভালোবাসবে কে তোমায়? 💔",
+    "Say yes, say yes, say yes! 🎉",
+    "তোমাকে নিজ হাতে খাইয়ে দিব! 💆‍♀️",
+    "তোমাকে খ্যাপসা খাওয়াবো! 🍽️",
+    "তোমার সাথে মুভি দেখব! 🎬",
+    "প্রতি ডেটে তোমার জন্য চকলেট আনবো! 🍫",
+    "সারাজীবন তোমার থাকবো! ☀️",
+    "তোমাকে ভালোবাসি প্রচন্ড 💓",
+    "বিসিএস প্রেপ কিন্তু তোমার জন্যই নিচ্ছি! 🌎",
+    "তোমার জন্য When Life Gives You Tangerines দেখসি! 🍀",
+    "Remember Your First kiss! 🙈",
+    "না বললে কিন্তু তোমাকে মারবো! 🔥",
+    "তোমার জন্য স্পাইডারম্যানের প্রোফাইল পিক চেঞ্জ করসি! 🕷️",
+    "তোমার ভুড়ি নিয়ে মজা করবো না (maybe)! 🤪",
+    "তোমাকে চা বানাই খাওয়াবো! 🥪",
+    "তোমাকে স্কিনকেয়ার কিনে দিব! 🧩",
+    "তোমাকে গল্পের বই পড়ে শুনাবো! ",
+    "Genie Make a Wish দেখবো! 🦞",
+    "তোমাকে গোলাপ কিনে দিব! 💐",
+    "তোমার মাথা ম্যাসাজ করে দিব! 👵👴",
+    "তোমাকে বিয়ের পর পার্সোনাল ওয়াশরুম আর বারান্দা দিব! ✨",
+    "তোমাকে BTS এর কনসার্টের টিকিট গিফট করবো! ",
+    "বিয়ের পর তোমাকে রান্না করার জন্য ফোর্স করবো না! 🌗",
+    "আমার ST এর স্যালারির পুরোটাই তো তোমার! ",
+    "I'll carry your bags! 🛍️",
+    "তোমাকে কত সহস্রবার স্বপ্নে দেখসি জানো? 🌠",
+    "তোমাকে ১কোটি টাকা দেনমোহর দিব! 🤝",
+    "তোমার জন্য আমি প্রতিদিন হাটতে যাই! 😇",
+    "তোমাকে ভডু বলবো না! 🤪",
+    "চল একসাথে সুন্দর স্মৃতি বানাই! 📸",
+    "You're my everything! 🌍",
+    "তোমাকে সারাজীবন আগলে রাখব! 🔒",
+    "নেভি চুদি! 🤞",
+    "শেষবারের মত মাফ করে দেও! 😭",
+    "তোমার সাথে একসাথে বৃষ্টিতে ভেজা! 📜",
+    "তোমার সাথে সিনেমা দেখা! ",
+    "তোমার সাথে ফুচকা খাওয়া! ☝️",
+    "তোমার হাতের কফি খাওয়া (Davidoff)! 🔮",
+    "তোমার রাগ আর কে সহ্য করতে পারবে? 📣",
+    "সবজায়গায় ব্লক দেবার পর কেউ তোমাকে মেইলে সরু বলবে? 😭",
+    "তোমার টোল পড়া হাসি বড্ড ভালোবাসি! 🎟️",
+    "তোমার টোল পড়া গালে সস রেখে ফ্রেঞ্চ ফ্রাই খাবো! 😜",
+    "তোমার চোখ খুব সুন্দর! 😍",
+    "তোমার হাসি খুব সুন্দর? ",
+    "আমাকে ছাড়লে বাঙ্গু মুমিনই পাবা! ➡️",
+    "তুমি সুন্দরী তাই তোমার দিকে চেয়ে থাকি এটাই কি আমার দোষ? ⚠️",
+    "Weight loss করব! 🥺",
+    "Six Pack is on the way!",
+    "তোমাকে বার বার কল দিয়ে জ্বালাবো না! ⏳"
+    "Please? 🥺",
+    "Don't say no!!!!",
+    "Pleaseeeeeeeeeeeee 💕",
+    "তোমার মাথা টিপে দিব! 🍝",
+    "রাত্রি please? 🎀",
+    "মৌনতা, আমি তো শুধু তোমারই! 😊",
+    "Just say yes! ❤️",
+    "ঢাকার রাস্তায় হাটু গেড়ে প্রোপোজ আর কে করবে তোমাকে? 🌟",
+    "তোমাকে রান্না করে খাওয়াবো! 🙏",
+    "তোমাকে ছাড়া কিভাবে বাঁচব আমি... 😢",
+    "One more chance? 🌹",
+    "তোমার ঐ মিষ্টি হাসি আমি বড্ড ভালোবাসি! 😄",
+    "তোমার জন্য কুমিল্লা কে আসবে? 💑",
+    "তোমার জন্য এত কবিতা আর কে লিখবে বলো! 💔",
+];
+
+let noClickCount = 0;
+let yesButtonScale = 1;
+let noButtonScale = 1;
+let currentSlide = 0;
+
+// ===== Sound Effects =====
+const clickSound = new Audio('data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACBhYqFbF1fdJivrJBhNjVgodDbq2EcBj+a2/LDciUFLIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBjiR1/LMeSwFJHfH8N2QQAoUXrTp66hVFApGn+DyvmwhBSuBzvLZiTYIGmi787eORgsUXrTo66hVFApGnt/yvmwhBSuAzvLZiTYIGmi787eORgsUXrTo66hVFApGnt/yvmwhBSt/zvHYiTYHGmi787eNRgsVXrPo66hWFApGnt/yvmwhBSt/zvHYiTYHGmi787eNRgsVXrPo66hWFApGnt/yvmwhBSt/zvHYiDYHGmi787eNRgsVXrPo66hWFApGnt/yvmwhBSt/zvHYiDUHGmi787eNRgsVXrPo66hWFApGnt/zvWwhBSt/zvHYiDUHGmi787eNRgsVXrPo66hWFApGnt/zvWwhBSt/zvHYiDUHGmi787eNRgsVXrPo66hWFApGnt/zvWwhBSt/zvHYiDUHGmi787eNRgsVXrPo66hWFApGnt/zvWwhBSt/zvHYiDUHGmi787eNRgsVXrPo66hWFApGnt/zvWwhBSt/zvHYiDUHGmi787eNRgsVXrPo66hWFApGnt/zvWwhBSt/zvHYiDUHGmi787eNRgsVXrPo66hWFApGnt/zvWwhBSt/zvHYiDUHGmi787eNRgsVXrPo66hWFApGnt/zvWwhBSt/zvHYiDUHGmi787eNRgsVXrPo66hWFApGnt/zvWwhBSt/zvHYiDUHGmi787eNRgsVXrPo66hWFApGnt/zvWwhBSt/zvHYiDUHGmi787eNRgsVXrPo66hWFApGn');
+
+// ===== DOM Elements =====
+const loadingScreen = document.getElementById('loadingScreen');
+const yesBtn = document.getElementById('yesBtn');
+const noBtn = document.getElementById('noBtn');
+const buttonContainer = document.getElementById('buttonContainer');
+const attemptCounter = document.getElementById('attemptCounter');
+const attemptText = document.getElementById('attemptText');
+const successModal = document.getElementById('successModal');
+const successMessage = document.getElementById('successMessage');
+const closeModalBtn = document.getElementById('closeModal');
+const musicToggle = document.getElementById('musicToggle');
+const mainMusic = document.getElementById('mainMusic');
+const musicFinale = document.getElementById('musicFinale');
+
+let currentTrack = mainMusic;
+let isMuted = false;
+const prevSlideBtn = document.getElementById('prevSlide');
+const nextSlideBtn = document.getElementById('nextSlide');
+const slideDots = document.getElementById('slideDots');
+
+// ===== Loading Screen =====
+window.addEventListener('load', () => {
+    setTimeout(() => {
+        loadingScreen.classList.add('hidden');
+    }, 7000); // 7 seconds
+});
+
+// ===== Background Particles =====
+function createParticles() {
+    const particlesContainer = document.getElementById('particles');
+    const particleEmojis = ['❤️', '💕', '💖', '💗', '💓', '💝', '💞'];
+
+    setInterval(() => {
+        const particle = document.createElement('div');
+        particle.className = 'particle';
+        particle.textContent = particleEmojis[Math.floor(Math.random() * particleEmojis.length)];
+        particle.style.left = Math.random() * 100 + '%';
+        particle.style.animationDuration = (Math.random() * 5 + 5) + 's';
+        particle.style.fontSize = (Math.random() * 1.5 + 1) + 'rem';
+
+        particlesContainer.appendChild(particle);
+
+        setTimeout(() => {
+            particle.remove();
+        }, 10000);
+    }, 500);
+}
+
+createParticles();
+
+// ===== Cursor Trail Effect =====
+const canvas = document.getElementById('cursorCanvas');
+const ctx = canvas.getContext('2d');
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+let cursorTrail = [];
+
+window.addEventListener('resize', () => {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+});
+
+document.addEventListener('mousemove', (e) => {
+    cursorTrail.push({
+        x: e.clientX,
+        y: e.clientY,
+        size: Math.random() * 15 + 5,
+        life: 1
+    });
+});
+
+function animateCursorTrail() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    cursorTrail = cursorTrail.filter(particle => particle.life > 0);
+
+    cursorTrail.forEach(particle => {
+        ctx.fillStyle = `rgba(255, 105, 180, ${particle.life})`;
+        ctx.beginPath();
+        ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
+        ctx.fill();
+
+        particle.life -= 0.02;
+        particle.size *= 0.95;
+    });
+
+    requestAnimationFrame(animateCursorTrail);
+}
+
+animateCursorTrail();
+
+// ===== Dynamic Music System =====
+let isMusicPlaying = false;
+
+// Function to smoothly transition between tracks
+function switchTrack(newTrack, fadeTime = 1000) {
+    if (isMuted || newTrack === currentTrack) return;
+
+    const oldTrack = currentTrack;
+    const oldVolume = oldTrack.volume;
+
+    // Set new track volume to 0 and start playing
+    newTrack.volume = 0;
+    newTrack.play().catch(e => console.log('Music play prevented:', e));
+
+    // Crossfade
+    const steps = 20;
+    const stepTime = fadeTime / steps;
+    let step = 0;
+
+    const fadeInterval = setInterval(() => {
+        step++;
+        const progress = step / steps;
+
+        oldTrack.volume = oldVolume * (1 - progress);
+        newTrack.volume = oldVolume * progress;
+
+        if (step >= steps) {
+            clearInterval(fadeInterval);
+            oldTrack.pause();
+            oldTrack.currentTime = 0;
+            currentTrack = newTrack;
+        }
+    }, stepTime);
+}
+
+// Function to update music based on interaction stage
+function updateMusicStage() {
+    if (noClickCount === 0) {
+        // Stage 1: Intro - Soft and mysterious
+        if (currentTrack !== musicIntro) {
+            switchTrack(musicIntro, 1500);
+        }
+    } else if (noClickCount >= 1 && noClickCount < 5) {
+        // Stage 2: Building tension
+        if (currentTrack !== musicTension) {
+            switchTrack(musicTension, 1500);
+        }
+    } else if (noClickCount >= 5) {
+        // Stage 3: High tension/dramatic
+        if (currentTrack !== musicIntense) {
+            switchTrack(musicIntense, 1500);
+        }
+    }
+}
+
+musicToggle.addEventListener('click', () => {
+    if (isMusicPlaying) {
+        // Mute all tracks
+        musicIntro.pause();
+        musicTension.pause();
+        musicIntense.pause();
+        musicFinale.pause();
+        musicToggle.classList.add('muted');
+        isMusicPlaying = false;
+        isMuted = true;
+    } else {
+        // Resume current track
+        currentTrack.play().catch(e => console.log('Music autoplay prevented:', e));
+        musicToggle.classList.remove('muted');
+        isMusicPlaying = true;
+        isMuted = false;
+    }
+});
+
+// Auto-play music on first user interaction
+document.addEventListener('click', () => {
+    if (!isMusicPlaying) {
+        musicIntro.volume = 0.6; // Set initial volume
+        musicTension.volume = 0.6;
+        musicIntense.volume = 0.6;
+        musicFinale.volume = 0.6;
+
+        musicIntro.play().catch(e => console.log('Music autoplay prevented:', e));
+        musicToggle.classList.remove('muted');
+        isMusicPlaying = true;
+    }
+}, { once: true });
+
+// ===== No Button Logic =====
+noBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    noClickCount++;
+
+    // Play click sound
+    try {
+        clickSound.currentTime = 0;
+        clickSound.play().catch(e => console.log('Sound play prevented:', e));
+    } catch (e) {
+        console.log('Sound error:', e);
+    }
+
+    // Update attempt counter with contextual messages
+    updateAttemptCounter();
+
+    // Update button text with pleasing message
+    const randomMessage = pleasingMessages[Math.floor(Math.random() * pleasingMessages.length)];
+    noBtn.textContent = randomMessage;
+
+    // Keep YES button at original size (no scaling)
+
+    // Update music stage based on click count
+    updateMusicStage();
+
+    // Move NO button to random position
+    moveNoButton();
+
+    // Add shake animation to card
+    const card = document.querySelector('.card');
+    card.style.animation = 'none';
+    setTimeout(() => {
+        card.style.animation = 'shake 0.5s';
+    }, 10);
+});
+
+function updateAttemptCounter() {
+    let message = '';
+
+    if (noClickCount === 1) {
+        message = "Really? You're saying no? 🥺";
+    } else if (noClickCount === 3) {
+        message = `You've said no ${noClickCount} times... come on! 😢`;
+    } else if (noClickCount === 5) {
+        message = `${noClickCount} rejections?! My heart can't take this! 💔`;
+    } else if (noClickCount === 10) {
+        message = `${noClickCount} TIMES?! Are you sure about this? 😭`;
+    } else if (noClickCount > 10) {
+        message = `${noClickCount} times and counting... I'm not giving up! ❤️`;
+    }
+
+    if (message && noClickCount > 0) {
+        attemptText.textContent = message;
+    }
+}
+
+function moveNoButton() {
+    const container = buttonContainer.getBoundingClientRect();
+    const button = noBtn.getBoundingClientRect();
+
+    // Calculate safe random position within container
+    const maxX = container.width - button.width - 40;
+    const maxY = container.height - button.height - 40;
+
+    const randomX = Math.max(0, Math.random() * maxX);
+    const randomY = Math.max(0, Math.random() * maxY);
+
+    noBtn.style.position = 'absolute';
+    noBtn.style.left = randomX + 'px';
+    noBtn.style.top = randomY + 'px';
+
+    // Make button move faster each time
+    noBtn.style.transition = `all ${Math.max(0.1, 0.5 - noClickCount * 0.02)}s ease`;
+}
+
+// Add shake animation to CSS dynamically
+const style = document.createElement('style');
+style.textContent = `
+    @keyframes shake {
+        0%, 100% { transform: translateX(0); }
+        25% { transform: translateX(-10px); }
+        75% { transform: translateX(10px); }
+    }
+`;
+document.head.appendChild(style);
+
+// ===== Yes Button Logic =====
+yesBtn.addEventListener('click', () => {
+    // Play click sound
+    try {
+        clickSound.currentTime = 0;
+        clickSound.play().catch(e => console.log('Sound play prevented:', e));
+    } catch (e) {
+        console.log('Sound error:', e);
+    }
+
+    // Switch to triumphant finale music
+    if (!isMuted) {
+        currentTrack.pause();
+        musicFinale.volume = 0.6;
+        musicFinale.play().catch(e => console.log('Music play prevented:', e));
+        currentTrack = musicFinale;
+    }
+
+    // Trigger confetti
+    triggerConfetti();
+
+    // Show success modal
+    setTimeout(() => {
+        showSuccessModal();
+    }, 500);
+});
+
+function triggerConfetti() {
+    const duration = 5 * 1000;
+    const animationEnd = Date.now() + duration;
+    const defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 9999 };
+
+    function randomInRange(min, max) {
+        return Math.random() * (max - min) + min;
+    }
+
+    const interval = setInterval(function () {
+        const timeLeft = animationEnd - Date.now();
+
+        if (timeLeft <= 0) {
+            return clearInterval(interval);
+        }
+
+        const particleCount = 50 * (timeLeft / duration);
+
+        confetti(Object.assign({}, defaults, {
+            particleCount,
+            origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 }
+        }));
+        confetti(Object.assign({}, defaults, {
+            particleCount,
+            origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 }
+        }));
+    }, 250);
+}
+
+function showSuccessModal() {
+    successModal.classList.add('active');
+
+    // Typing animation for success message
+    const message = "Yes! I knew you loved me! 💖";
+    let i = 0;
+    successMessage.textContent = '';
+
+    const typingInterval = setInterval(() => {
+        if (i < message.length) {
+            successMessage.textContent += message.charAt(i);
+            i++;
+        } else {
+            clearInterval(typingInterval);
+            // Remove typing cursor effect after completion
+            setTimeout(() => {
+                successMessage.style.borderRight = 'none';
+            }, 500);
+        }
+    }, 100);
+
+    // Initialize slideshow
+    initSlideshow();
+}
+
+// ===== Slideshow Logic =====
+function initSlideshow() {
+    const slides = document.querySelectorAll('.slide');
+
+    // Create dots
+    slides.forEach((_, index) => {
+        const dot = document.createElement('span');
+        dot.className = 'dot';
+        if (index === 0) dot.classList.add('active');
+        dot.addEventListener('click', () => goToSlide(index));
+        slideDots.appendChild(dot);
+    });
+
+    showSlide(currentSlide);
+}
+
+function showSlide(n) {
+    const slides = document.querySelectorAll('.slide');
+    const dots = document.querySelectorAll('.dot');
+
+    if (n >= slides.length) currentSlide = 0;
+    if (n < 0) currentSlide = slides.length - 1;
+
+    slides.forEach(slide => slide.classList.remove('active'));
+    dots.forEach(dot => dot.classList.remove('active'));
+
+    slides[currentSlide].classList.add('active');
+    if (dots[currentSlide]) {
+        dots[currentSlide].classList.add('active');
+    }
+}
+
+function changeSlide(n) {
+    currentSlide += n;
+    showSlide(currentSlide);
+}
+
+function goToSlide(n) {
+    currentSlide = n;
+    showSlide(currentSlide);
+}
+
+prevSlideBtn.addEventListener('click', () => changeSlide(-1));
+nextSlideBtn.addEventListener('click', () => changeSlide(1));
+
+// Auto-advance slideshow
+setInterval(() => {
+    if (successModal.classList.contains('active')) {
+        changeSlide(1);
+    }
+}, 5000);
+
+// ===== Close Modal =====
+closeModalBtn.addEventListener('click', () => {
+    successModal.classList.remove('active');
+
+    // Reset for replay
+    noClickCount = 0;
+    yesButtonScale = 1;
+    noButtonScale = 1;
+    attemptText.textContent = '';
+    yesBtn.style.transform = 'scale(1)';
+    noBtn.style.transform = 'scale(1)';
+    noBtn.style.position = 'relative';
+    noBtn.textContent = 'No 😢';
+    currentSlide = 0;
+
+    // Reset music to main track
+    if (!isMuted && currentTrack !== mainMusic) {
+        currentTrack.pause();
+        currentTrack.currentTime = 0;
+        mainMusic.currentTime = 0;
+        mainMusic.play().catch(e => console.log('Music play prevented:', e));
+        currentTrack = mainMusic;
+    }
+
+    // Clear dots
+    slideDots.innerHTML = '';
+});
+
+// Close modal on outside click
+successModal.addEventListener('click', (e) => {
+    if (e.target === successModal) {
+        closeModalBtn.click();
+    }
+});
+
+// ===== Keyboard Shortcuts =====
+document.addEventListener('keydown', (e) => {
+    if (successModal.classList.contains('active')) {
+        if (e.key === 'ArrowLeft') changeSlide(-1);
+        if (e.key === 'ArrowRight') changeSlide(1);
+        if (e.key === 'Escape') closeModalBtn.click();
+    }
+});
+
+console.log('💕 Valentine\'s Day Website loaded successfully! 💕');

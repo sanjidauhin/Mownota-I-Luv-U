@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mownota, My Ratri! 💕</title>
+    <meta name="description" content="A special question for Mownota">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Entrance Screen -->
+    <div id="entranceScreen" class="entrance-screen">
+        <div class="entrance-content">
+            <h1 class="entrance-title">Hi, Mownota!</h1>
+            <p class="entrance-text">Are you ready to see something special, রাত্রি?</p>
+            <button id="enterBtn" class="btn btn-yes" style="font-size: 1.5rem; padding: 1rem 3rem;">Yes! 💖</button>
+        </div>
+    </div>
+
+    <!-- Loading Screen -->
+    <div id="loadingScreen" class="loading-screen hidden">
+        <div class="loading-content">
+            <div class="heart-loader">
+                <span class="heart">❤️</span>
+            </div>
+            <h2 class="loading-text">Preparing something special, রাত্রিমণি...</h2>
+        </div>
+    </div>
+
+    <!-- Background Particles -->
+    <div id="particles"></div>
+
+    <!-- Cursor Trail -->
+    <canvas id="cursorCanvas"></canvas>
+
+    <!-- Music Control -->
+    <button id="musicToggle" class="music-toggle" title="Toggle Music">
+        <span class="music-icon">🔊</span>
+    </button>
+    <!-- Music Tracks -->
+    <audio id="mainMusic" loop>
+        <source src="Murtaza_Qizilbash___Hum___Official_Audio(128k).mp3" type="audio/mpeg">
+    </audio>
+    <audio id="musicFinale" loop>
+        <source src="Ehsaas__Acoustic__-_Faheem_Abdullah,_UNPLG_d_@faheemabdullahworld(48k).mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Main Content -->
+    <main class="container">
+        <div class="card" id="questionCard">
+            <h1 class="title">Will You Be Mine Forever, মৌনতা?</h1>
+            <p class="subtitle">💝</p>
+
+            <div class="attempt-counter" id="attemptCounter">
+                <span id="attemptText"></span>
+            </div>
+
+            <div class="button-container" id="buttonContainer">
+                <button class="btn btn-yes" id="yesBtn">Yes! 💕</button>
+                <button class="btn btn-no" id="noBtn">No 😢</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Success Modal -->
+    <div id="successModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="typing-text" id="successMessage"></h2>
+            </div>
+
+            <!-- Photo Slideshow -->
+            <div class="slideshow-container" id="slideshowContainer">
+                <div class="slideshow">
+                    <div class="slide active">
+                        <img src="IMG-20240405-WA0007.jpg" alt="Our precious moment">
+                        <p class="slide-caption">Happy Four Year of Togetherness</p>
+                    </div>
+                    <div class="slide">
+                        <img src="IMG20240907155348.jpg" alt="Happy together">
+                        <p class="slide-caption">তোমার সাথে সারাজীবন থাকতে চাই</p>
+                    </div>
+                    <div class="slide">
+                        <img src="IMG20260124150818.jpg" alt="Forever together">
+                        <p class="slide-caption">তোমার কথা মত চলবো সবসময়</p>
+                    </div>
+                </div>
+                <div class="slide-dots" id="slideDots"></div>
+            </div>
+
+            <!-- Love Letter -->
+            <div class="love-letter">
+                <h3>My Dearest মৌনতামণি, 💌</h3>
+                <p class="letter-content">
+                    From the moment you walked into my life, everything became brighter. Your smile is my daily
+                    motivation,
+                    and your laughter is my favorite sound. I never knew what true happiness was until I met you.
+                    <br><br>
+                    Every day with you feels like a new adventure, and I wouldn't want to share this journey with anyone
+                    else.
+                    You are kind, strong, and incredibly beautiful, inside and out. You inspire me to be a better
+                    person,
+                    and your support means the world to me. No matter what challenges life throws at us, I know that
+                    as long as I have you by my side, I can face anything.
+                    <br><br>
+                    I cherish every memory we've made, and I dream of all the beautiful moments waiting for us in the
+                    future.
+                    You are my best friend, my confidante, and my greatest love. I promise to always stand by your side,
+                    to support your dreams, and to love you more with each passing day.
+                    <br><br>
+                    You are the missing piece I didn't know I was looking for. Thank you for being you, and for choosing
+                    me.
+                    <br><br>
+                    <strong>Will you make me the happiest person alive?</strong>
+                </p>
+            </div>
+
+
+
+            <!-- Close button removed as requested -->
+        </div>
+    </div>
+
+    <!-- External Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+
+</html>
