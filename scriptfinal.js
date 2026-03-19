@@ -313,7 +313,7 @@ function updateAttemptCounter() {
     } else if (noClickCount === 3) {
         message = `মৌনতামণি, You've said no ${noClickCount} times... come on! 😢`;
     } else if (noClickCount === 5) {
-        message = `${noClickCount} rejections?! My heart can't take this, রাত্রি! 💔`;
+        message = `${noClickCount} rejections?! আমি কিন্তু আত্মহত্যা করবো, রাত্রি! 💔`;
     } else if (noClickCount === 10) {
         message = `${noClickCount} TIMES?! আর একবার না ক্লিক করলে থাবড়াবো কিন্তু, মোডা, ভডু? 😭`;
     } else if (noClickCount > 10) {
