@@ -1,5 +1,5 @@
 // ===== Configuration =====
-const pleasingMessages1 = [
+const pleasingMessages = [
     "তোমার আইটেমের আগে কল দিয়ে জ্বালাবো না! 🌟",
     "তুমি যা বলবে তাই করবো! 🙏",
     "তোমার জন্য কবিতা লিখবো... 😢",
@@ -286,7 +286,7 @@ noBtn.addEventListener('click', (e) => {
 
     // Update text
     updateAttemptCounter();
-    const randomMessage = pleasingMessages1[Math.floor(Math.random() * pleasingMessages1.length)];
+    const randomMessage = pleasingMessages[Math.floor(Math.random() * pleasingMessages.length)];
     noBtn.textContent = randomMessage;
 
     // Move button (now relative to body)
