@@ -420,7 +420,7 @@ function showSuccessModal() {
     successModal.classList.add('active');
 
     // Typing animation for success message
-    const message = "Yes! I knew you loved me! 💖";
+    const message = "Yes! I knew you loved me, মৌনতা! 💖";
     let i = 0;
     successMessage.textContent = '';
 
