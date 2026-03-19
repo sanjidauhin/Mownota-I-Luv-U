@@ -303,15 +303,15 @@ function updateAttemptCounter() {
     let message = '';
 
     if (noClickCount === 1) {
-        message = "Really? You're saying no? 🥺";
+        message = "Really? You're saying no, মৌনতা? 🥺";
     } else if (noClickCount === 3) {
-        message = `You've said no ${noClickCount} times... come on! 😢`;
+        message = `মৌনতামণি, You've said no ${noClickCount} times... come on! 😢`;
     } else if (noClickCount === 5) {
-        message = `${noClickCount} rejections?! My heart can't take this! 💔`;
+        message = `${noClickCount} rejections?! My heart can't take this, রাত্রি! 💔`;
     } else if (noClickCount === 10) {
-        message = `${noClickCount} TIMES?! Are you sure about this? 😭`;
+        message = `${noClickCount} TIMES?! আর একবার না ক্লিক করলে থাবড়াবো কিন্তু, মোডা, ভডু? 😭`;
     } else if (noClickCount > 10) {
-        message = `${noClickCount} times and counting... I'm not giving up! ❤️`;
+        message = `${noClickCount} times and counting... I'm not giving up রাত্রিমণি! ❤️`;
     }
 
     if (message && noClickCount > 0) {
@@ -428,7 +428,7 @@ function showSuccessModal() {
     successModal.classList.add('active');
 
     // Set message directly (No typewriter)
-    successMessage.textContent = "Yes! I knew you loved me! 💖";
+    successMessage.textContent = "Yes! I knew you loved me, মৌনতা! 💖";
 
     initSlideshow();
 }
